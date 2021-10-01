@@ -15,14 +15,14 @@ canvas: document.querySelector('#bg'),
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
-camera.position.setX(-3);
+// camera.position.setZ(30);
+// camera.position.setX(-355);
 
 renderer.render(scene, camera);
 
 // Torus
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+const geometry = new THREE.TorusGeometry(20, 3, 16, 100);
 const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
 const torus = new THREE.Mesh(geometry, material);
 
@@ -45,19 +45,19 @@ scene.add(pointLight, ambientLight);
 // const controls = new OrbitControls(camera, renderer.domElement);
 
 function addStar() {
-const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+const geometry = new THREE.SphereGeometry(0.3, 24, 24);
 const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
 const star = new THREE.Mesh(geometry, material);
 
 const [x, y, z] = Array(3)
   .fill()
-  .map(() => THREE.MathUtils.randFloatSpread(100));
+  .map(() => THREE.MathUtils.randFloatSpread(115));
 
 star.position.set(x, y, z);
 scene.add(star);
 }
 
-Array(200).fill().forEach(addStar);
+Array(500).fill().forEach(addStar);
 
 // Background
 
@@ -122,6 +122,7 @@ torus.rotation.y += 0.005;
 torus.rotation.z += 0.01;
 
 moon.rotation.x += 0.005;
+
 
 // controls.update();
 
