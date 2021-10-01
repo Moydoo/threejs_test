@@ -1,8 +1,25 @@
 @import url("https://use.typekit.net/jmk3xov.css");
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2e5f93;
 }
 
 canvas {
@@ -11,16 +28,13 @@ canvas {
   left: 0;
 }
 
-
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
-
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
 
 main {
   width: 100vw;
@@ -30,7 +44,6 @@ main {
   width: 100%;
   margin: 0px auto;
   padding: 120px 0px;
-
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
@@ -47,40 +60,38 @@ canvas {
   left: 0;
 }
 
+header {
+  background: var(--dark-bg);
+  grid-column: 2 / span 5;
+  font-size: 2.5rem;
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+}
 
+section {
+  grid-column: 2 / 8;
+  padding: 1rem;
+  background: var(--dark-bg);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing);
+}
 
-  header {
-    background: var(--dark-bg);
-    grid-column: 2 / span 5;
-    font-size: 2.5rem;
-    padding: 2rem;
-    margin-bottom: var(--spacing);
-  }
+blockquote {
+  margin: 0;
+  padding: 0;
+  grid-column: 2 / span 9;
+  margin-bottom: var(--spacing);
+}
 
-  section {
-    grid-column: 2 / 8;
-    padding: 1rem;
-    background: var(--dark-bg);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    margin-bottom: var(--spacing);
-  }
+blockquote p {
+  color: black;
+  background-color: white;
+  font-size: 4rem;
+  display: inline;
+  line-height: 1;
+}
 
-  blockquote {
-    margin: 0;
-    padding: 0;
-    grid-column: 2 / span 9;
-    margin-bottom: var(--spacing);
-  }
-
-  blockquote p {
-    color: black;
-    background-color: white;
-    font-size: 4rem;
-    display: inline;
-    line-height: 1;
-  }
-
-  .left {
-    grid-column: 6 / 12;
-  }
+.left {
+  grid-column: 6 / 12;
+}
